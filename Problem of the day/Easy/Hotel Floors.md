@@ -25,7 +25,7 @@ We don’t need to explicitly track room availability because the problem guaran
 
 ---
 
-# Code (Java)
+# Code
 
 ```java
 import java.util.* ;
@@ -46,3 +46,19 @@ public class Solution {
 
 ---
 
+## **Example Walkthrough**
+
+### Example 1:
+
+Input: `["+1A", "+3E", "-1A", "+4F", "+1A", "-3E"]`
+
+- `+1A` → coins = 1
+- `+3E` → coins = 2
+- `-1A` → no coins
+- `+4F` → coins = 3
+- `+1A` → coins = 4
+- `-3E` → no coins
+
+Output: **4**
+
+---
