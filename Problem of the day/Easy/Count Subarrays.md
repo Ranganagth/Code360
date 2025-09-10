@@ -1,40 +1,99 @@
 # Intuition
 
-To find the total number of subarrays consisting **only of 1s** and **only of 0s**, we can **count the lengths of continuous segments of 1s and 0s**.
-For each such segment of length `len`, the number of subarrays formed is:
+Whenever you have a consecutive block of identical elements (say length `k`), the number of subarrays formed **entirely within that block** is:
 
-```
-(len * (len + 1)) / 2
-```
+$$
+\text{count} = \frac{k \times (k+1)}{2}
+$$
 
-This is because:
+Why?
 
-* A segment of length 3 → subarrays: [x], [x,x], [x,x,x] → 3 + 2 + 1 = 6 = (3\*4)/2.
+* A block of size `k` has:
+
+  * `k` subarrays of length `1`,
+  * `k-1` subarrays of length `2`,
+  * … up to `1` subarray of length `k`.
+    So, total = `1 + 2 + … + k = k*(k+1)/2`.
+
+Thus, the task reduces to:
+
+1. Traverse the array.
+2. Identify contiguous blocks of 0s or 1s.
+3. For each block, add `len * (len+1) / 2` to the answer.
 
 ---
 
 # Approach
 
-1. Traverse the array while maintaining a `count` of consecutive same elements (0 or 1).
-2. If the current element breaks the streak, use the formula `(count * (count + 1)) / 2` to add to the total.
-3. Reset the counter and continue.
-4. After the loop, make sure to add the last segment count as well.
+1. Initialize `count = 0`.
+2. Traverse array with a loop.
 
-Repeat the above for each test case.
+   * Maintain a `len` counter for consecutive same elements.
+   * If current element differs from previous, calculate subarrays for the previous block (`len * (len+1) / 2`) and reset `len = 1`.
+3. After the loop ends, don’t forget to add for the **last block**.
+4. Return the total.
 
 ---
 
 # Complexity
 
-* **Time complexity:**
-  $O(N)$ per test case
-
-* **Space complexity:**
-  $O(1)$ (constant extra space)
+* **Time:** `O(N)` (single pass).
+* **Space:** `O(1)` (constant extra memory).
 
 ---
 
 # Code
+
+```java
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+    public static int numberofSubarrays(int n, int[] arr) {
+        long result = 0; // use long to avoid overflow for large n
+
+        int len = 1; // length of current block
+        for (int i = 1; i < n; i++) {
+            if (arr[i] == arr[i - 1]) {
+                len++;
+            } else {
+                // finish previous block
+                result += (long) len * (len + 1) / 2;
+                len = 1;
+            }
+        }
+        // add last block
+        result += (long) len * (len + 1) / 2;
+
+        return (int) result; // constraints fit in int
+    }
+}
+```
+
+---
+
+### Example Walkthrough
+
+Input:
+
+```
+n = 7  
+arr = [1, 0, 0, 0, 1, 0, 1]
+```
+
+* Block1: `[1]` → len=1 → contributes `1`.
+* Block2: `[0,0,0]` → len=3 → contributes `3*4/2 = 6`.
+* Block3: `[1]` → len=1 → contributes `1`.
+* Block4: `[0]` → len=1 → contributes `1`.
+* Block5: `[1]` → len=1 → contributes `1`.
+
+Total = `1 + 6 + 1 + 1 + 1 = 10`.
+
+Matches sample output.
+
+---
+
+# Code 2
 
 ```java
 import java.util.*;
