@@ -31,7 +31,7 @@ public class NestedIterator {
     }
 
     public Integer next() {
-        return nextElement;
+        return nextInteger;
     }
 
     public boolean hasNext() {
