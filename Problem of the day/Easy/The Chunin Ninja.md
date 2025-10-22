@@ -80,7 +80,7 @@ public class Solution {
 
 ---
 
-## **Example Walkthrough**
+## Example Walkthrough
 
 ### Example 1:
 ```
@@ -101,8 +101,6 @@ ARR = [ [3, 4, 5],
 - Row 2 min = 1 → arr[2][0] = 1 but colMax[0] = 3 → not valid.  
 
 **Answer = [3]**  
-
----
 
 ### Example 2:
 ```
