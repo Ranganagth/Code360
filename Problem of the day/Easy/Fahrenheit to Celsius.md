@@ -56,7 +56,7 @@ public class Solution {
 
 ---
 
-### **Example Execution**
+## Example Execution
 
 For input:
 
