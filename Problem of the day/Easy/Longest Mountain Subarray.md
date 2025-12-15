@@ -80,7 +80,7 @@ public class Solution {
 
 ---
 
-### **Example Walkthrough:**
+# Example Walkthrough:
 
 **Input:** `arr = [1, 3, 1, 4]`
 **up\[]:**    `[0, 1, 0, 1]`
