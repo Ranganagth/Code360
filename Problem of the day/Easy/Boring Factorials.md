@@ -111,3 +111,5 @@ n = 10, p = 7
 * `n ≥ p`
 * Factor `7` exists in `10!`
 * Result = `0`
+
+---
