@@ -61,12 +61,13 @@ public class Solution {
 		}
 		return "YES";
 	}
-}
+};
+
 ```
 
 ---
 
-### **Example Walkthrough**
+# Example Walkthrough
 
 **Test Case 1:**
 
