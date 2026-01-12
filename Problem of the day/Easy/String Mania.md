@@ -1,4 +1,5 @@
-# Intuition  
+# Intuition
+
 This is essentially a **lexicographical comparison** problem, similar to how strings are compared in dictionaries or how `compareTo()` works in Java.  
 We need to compare both strings character by character.  
 - As soon as a mismatch is found, the character that is lexicographically larger determines the better string.  
@@ -6,7 +7,8 @@ We need to compare both strings character by character.
 
 ---
 
-# Approach  
+# Approach
+
 1. Iterate through both strings up to the minimum of their lengths.  
 2. At each index:
    - If characters differ, return `1` if `str1[i] > str2[i]`, else return `-1`.
@@ -17,7 +19,8 @@ We need to compare both strings character by character.
 
 ---
 
-# Complexity  
+# Complexity
+
 - **Time complexity**:  
   $O(\min(n, m))$ - We compare character-by-character until mismatch or end.
 
@@ -26,7 +29,8 @@ We need to compare both strings character by character.
 
 ---
 
-# Code  
+# Code 
+
 ```java
 import java.util.*;
 import java.io.*;
@@ -44,10 +48,13 @@ public class Solution {
         if (n == m) return 0;
         return n > m ? 1 : -1;
     }
-}
+};
+
 ```
 
+
 ### Sample Driver Code (for multiple test cases)
+
 ```java
 import java.util.*;
 
@@ -71,7 +78,8 @@ public class Main {
 
 ---
 
-# Example and Explanation Walkthrough  
+# Example and Explanation Walkthrough
+
 **Input**:
 ```
 3
@@ -94,6 +102,7 @@ agtaa
 ```
 
 **Explanation**:
+
 1. `ez` vs `ehz`: Both start with `e`, then `z > h`, so `ez` is better → output `1`
 2. Same strings → output `0`
 3. `ags` vs `agtaa`: Match till 2nd index. Then `s < t`? No, but `ags` ends, and `agtaa` continues → `str2` is better → output `-1`
