@@ -40,7 +40,6 @@ This correctly handles consecutive equal heights and tall hill boundaries.
 # Code
 
 ```java
-// Correct solution for the given problem statement
 import java.util.*;
 
 public class Solution {
@@ -70,7 +69,8 @@ public class Solution {
 
         return count;
     }
-}
+};
+
 ```
 
 ---
