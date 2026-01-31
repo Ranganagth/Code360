@@ -97,7 +97,7 @@ List: 1 → 2 → 3 → 4
 
 * `slow` and `fast` eventually meet → **true**
 
-### Example 3
+### Example 2
 
 ```
 List: 5 → null
