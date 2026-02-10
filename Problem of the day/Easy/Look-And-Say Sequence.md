@@ -70,12 +70,13 @@ public class Solution {
 
         return term;
     }
-}
+};
+
 ```
 
 ---
 
-## Example Walkthrough
+# Example Walkthrough
 
 **Input:** `n = 6`
 
