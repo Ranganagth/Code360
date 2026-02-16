@@ -88,7 +88,7 @@ public class Solution {
 
 # Example walkthrough with explanation
 
-### Input:
+**Input:**
 
 ```
 1
@@ -105,7 +105,7 @@ sleep drink
   * `[you]` → `[you sleep]`, `[you drink]`
   * `[we]` → `[we sleep]`, `[we drink]`
 
-### Output:
+**Output:**
 
 ```
 you sleep
