@@ -102,7 +102,6 @@ public class Solution {
 
 ---
 
-
 # Example Walkthrough
 
 **Example**
