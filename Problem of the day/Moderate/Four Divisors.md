@@ -1,3 +1,4 @@
+## Approach 1
 # Intuition
 We are given integers and we need to:
 - Identify which numbers have **exactly 4 divisors**.
@@ -107,4 +108,116 @@ Output:
 ```
 36
 32
+```
+
+---
+---
+
+## Approach 2
+# Intuition
+
+A number has **exactly 4 divisors** only in two cases:
+
+1. $( n = p \times q )$ where `p` and `q` are **distinct primes**
+   divisors: `1, p, q, n`
+
+2. $( n = p^3 )$ where `p` is prime
+   divisors: `1, p, p², p³`
+
+Any other number will have ≠ 4 divisors.
+
+---
+
+# Approach
+
+For each number:
+
+1. Try to find its divisors up to √n.
+2. Count divisors:
+
+   * if more than 4 → stop early.
+3. If exactly 4:
+
+   * sum them and add to result.
+
+Optimization:
+
+* break early if divisor count exceeds 4.
+
+---
+
+# Complexity
+
+* **Time complexity:** $O(N * √A)$
+
+* **Space complexity:** $O(1)$
+
+---
+
+# Code
+
+```java
+import java.util.*;
+import java.io.*;
+
+public class Solution {
+	public static int sumFourDivisors(ArrayList<Integer> arr, int n) {
+
+		int totalSum = 0;
+
+		for (int num : arr) {
+
+			int count = 0;
+			int sum = 0;
+
+			for (int i = 1; i * i <= num; i++) {
+
+				if (num % i == 0) {
+
+					int j = num / i;
+
+					if (i == j) {
+						count++;
+						sum += i;
+					} else {
+						count += 2;
+						sum += i + j;
+					}
+
+					if (count > 4) break;
+				}
+			}
+
+			if (count == 4) {
+				totalSum += sum;
+			}
+		}
+
+		return totalSum;
+	}
+};
+
+```
+
+---
+
+# Example walkthrough
+
+Input:
+
+```text
+[2,5,6,15]
+```
+
+Check:
+
+```text
+6 → divisors = 1,2,3,6 → sum = 12
+15 → divisors = 1,3,5,15 → sum = 24
+```
+
+Total:
+
+```text
+12 + 24 = 36
 ```
