@@ -58,15 +58,27 @@ So the pattern is simply:
 # Code
 
 ```typescript
-function printPatt(n: number): string[] {
-    const pattern: string[] = [];
-    
-    for (let i = 0; i < n; i++) {
-        const stars = '*'.repeat(n - i);
-        pattern.push(stars);
-    }
+import java.util.*;
+import java.io.*;
 
-    return pattern;
+public class Solution {
+	public static String[] printPatt(int n) {
+
+		String[] res = new String[n];
+
+		for (int i = 0; i < n; i++) {
+
+			StringBuilder sb = new StringBuilder();
+
+			for (int j = 0; j < n - i; j++) {
+				sb.append("*");
+			}
+
+			res[i] = sb.toString();
+		}
+
+		return res;
+	}
 }
 ```
 
