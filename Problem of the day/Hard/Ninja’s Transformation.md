@@ -1,4 +1,4 @@
-## Intuition
+# Intuition
 
 Each cell’s rank depends only on **relative ordering within its row and column**, not on global position.
 Equal values connected through rows or columns must share the **same rank**.
@@ -13,7 +13,7 @@ This is a **partial order** problem with equality constraints → solve by:
 
 ---
 
-## Approach
+# Approach
 
 1. **Flatten the matrix** into `(value, row, col)` cells.
 2. **Sort all cells by value ascending**.
@@ -42,7 +42,7 @@ This guarantees:
 
 ---
 
-## Complexity
+# Complexity
 
 * Let `R = rows`, `C = cols`, `N = R * C`
 * **Time:** `O(N log N)` (sorting + union-find)
@@ -162,7 +162,7 @@ public class Solution {
 
 ---
 
-## Example Walkthrough
+# Example Walkthrough
 
 Matrix:
 
