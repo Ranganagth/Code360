@@ -37,7 +37,7 @@ str1 = "aab", str2 = "xxy"
 
 ## Algorithm
 
-```text
+```
 if (lengths differ) return false
 
 create two arrays of size 256 (ASCII characters) for mapping:
