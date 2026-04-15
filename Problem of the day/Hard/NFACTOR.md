@@ -105,7 +105,7 @@ public class Solution {
         }
         
         return ans;
-    }
+    };
 
     // For local testing
     public static void main(String[] args) {
@@ -115,7 +115,8 @@ public class Solution {
         
         System.out.println(getNfactor(queries)); // [1, 6]
     }
-}
+};
+
 ```
 
 ---
