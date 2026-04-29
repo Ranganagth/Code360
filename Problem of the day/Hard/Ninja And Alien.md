@@ -7,10 +7,9 @@ From adjacent words, derive ordering rules:
 * compare two words
 * first differing character gives an edge:
 
-  ```
+  $$
   u → v  (u comes before v)
-  ```
-
+ $$ 
 Build a graph and perform **topological sort**.
 
 To ensure **lexicographically smallest order**, use:
@@ -21,6 +20,8 @@ Also detect **invalid cases**:
 
 * prefix issue: `"abc"` before `"ab"` → invalid
 * cycle in graph
+
+---
 
 # Approach
 
@@ -34,19 +35,18 @@ Also detect **invalid cases**:
    * use min-heap for lexicographical order
 4. If result size != total chars → cycle → return ""
 
+---
+
 # Complexity
 
-* Time complexity:
-
-```text
+* **Time complexity:**
+$$
 O(C + E log C)
-```
-
-* Space complexity:
-
-```text
+$$
+* **Space complexity:**
+$$
 O(C + E)
-```
+$$
 
 # Code
 
